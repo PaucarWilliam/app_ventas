@@ -1,12 +1,8 @@
 from fastapi import FastAPI
+from app.api.routes import user
 
 app = FastAPI()
 
+app.include_router(user.router)
 
-@app.get('/',tags=["Usuarios"])
-def home():
-    return "USUARIOS REGISTRADOS"
 
-@app.get('/listar',tags=["Usuarios"])
-def homelistar():
-    return "LISTAS USUARIOS"
