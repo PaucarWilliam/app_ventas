@@ -2,7 +2,6 @@ from sqlalchemy.orm import Session
 from app.db.models.product import Producto
 
 def get_products(db: Session):
-    """Retorna la lista de objetos Producto desde la BD"""
     return db.query(Producto).all()
 
 def create_product(db: Session, product_data: dict):
