@@ -8,5 +8,6 @@ class ProductSchema(BaseModel):
     marca: Optional[str] = None
     stock_actual: int
 
-    class Config:
-        from_attributes = True 
+    model_config = {
+            "from_attributes": True
+    }
