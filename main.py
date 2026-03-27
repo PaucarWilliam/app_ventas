@@ -1,12 +1,5 @@
 from fastapi import FastAPI
+from app.api.routes import product
 
 app = FastAPI()
-
-
-@app.get('/',tags=["Usuarios"])
-def home():
-    return "USUARIOS REGISTRADOS"
-
-@app.get('/listar',tags=["Usuarios"])
-def homelistar():
-    return "LISTAS USUARIOS"
+app.include_router(product.router)
